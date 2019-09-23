@@ -3,18 +3,65 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Webpack Showcase</title>
-    
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Tip Calculator</title>
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="container">
-        <header class="page-header">
-            <h1>Web Dev</h1>
-            <h2>Super Awesome</h2>
-        </header>
+<body class="container">
+    <h1 class="page-header">Tip Calculator</h1>
+    <form id="tip-form">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text"
+                       for="check-amount-input"
+                       class="sr-only">$</label>
 
-    </div>
+            </div>
+            <input type="number"
+                   id="check-amount-input"
+                   class="form-control"
+                   placeholder="Enter the check amount"
+                   required
+                   autofocus>
+            <div class="invalid-feedback">
+                Please provide positive numeric amount
+            </div>
+        </div>
+
+        <div id="tip-percent-group"
+             class="input-group mb-3">
+            <div id="fixed-tip-percent-group"
+                 class="btn-group input-group-prepend">
+                <!-- dynamically generated template button -->
+                <!-- <button data-tip-percent="10"
+                        class="btn btn-secondary">10%</button> -->
+            </div>
+            <input type="number"
+                   id="tip-percentage-input"
+                   min="0"
+                   class="form-control"
+                   placeholder="Enter a custom tip percentage"
+                   autofocus>
+            <div class="invalid-feedback">
+                Please provide positive numeric amount
+            </div>
+        </div>
+        <p id="tip-message">You are tipping <span id="tip-percentage-message-amount"></span></p>
+
+    </form>
+    <section id="results">
+        <div class="form-control">Bill Amount: <span id="check-amount"></span></div>
+        <div class="form-control">Tip Percentage: <span id="tip-percentage"></span></div>
+        <div class="form-control">Amount of tip: <span id="tip-amount"></span></div>
+        <div class="form-control"><em>Total to be Paid: <span id="total-amount"></span></em></div>
+    </section>
 </body>
 
 </html>
